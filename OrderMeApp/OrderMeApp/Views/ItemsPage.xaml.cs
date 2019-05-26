@@ -13,27 +13,32 @@ using OrderMeApp.ViewModels;
 
 namespace OrderMeApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+   
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+       // ItemsViewModel viewModel;
+
+
+        ProductListViewModel viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            //BindingContext = viewModel = new ItemsViewModel();
+
+            BindingContext = viewModel = new ProductListViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
+            var item = args.SelectedItem as ProductModel;
             if (item == null)
                 return;
 
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
-            // Manually deselect item.
+           
             ItemsListView.SelectedItem = null;
         }
 

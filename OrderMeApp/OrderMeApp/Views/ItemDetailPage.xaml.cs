@@ -8,7 +8,7 @@ using OrderMeApp.ViewModels;
 
 namespace OrderMeApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel;
@@ -23,15 +23,46 @@ namespace OrderMeApp.Views
         public ItemDetailPage()
         {
             InitializeComponent();
+               
 
-            var item = new Item
+        }
+
+        private async void onOrder(object sender, EventArgs e)
+        {
+            try
             {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
+                ProductModel product = viewModel.Item;
 
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+
+                OrderDto newOrder = new OrderDto
+                {
+                    Category = product.Category,
+                    Number = Convert.ToInt32(txtAmount.Text),
+                    Customer = "Me",
+                    CustomerId = "1",
+                    Description = product.Description,
+                    Price = product.Price,
+                    Product = product.Title,
+                    isShipped = false,
+                    OrderDate=new DateTime()
+                     
+                };
+            
+
+                viewModel.SaveOrderCommand(newOrder);
+
+                await DisplayAlert("", "Order is successed", "OK");
+
+            }
+            catch (Exception exc)
+            {
+                DisplayAlert("", exc.Message, "OK");
+            }
+
+
+
+
+
         }
     }
 }

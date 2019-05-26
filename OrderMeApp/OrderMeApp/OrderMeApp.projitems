@@ -17,12 +17,18 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\HomeMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\OrderDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProductModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\QueryModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResponseData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ServiceProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemDetailViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProductListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>

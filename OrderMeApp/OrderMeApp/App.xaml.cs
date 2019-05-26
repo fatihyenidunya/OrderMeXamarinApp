@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using OrderMeApp.Views;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace OrderMeApp
 {
     public partial class App : Application

@@ -8,7 +8,7 @@ using OrderMeApp.Models;
 
 namespace OrderMeApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+   
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }

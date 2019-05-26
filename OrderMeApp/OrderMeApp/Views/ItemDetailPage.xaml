@@ -4,9 +4,14 @@
              x:Class="OrderMeApp.Views.ItemDetailPage"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small"/>
+        <Label Text="Product:" FontSize="Medium" />
+        <Label Text="{Binding Item.Title}" FontSize="Small"/>
+        <Label Text="Price:" FontSize="Medium" />
+        <Label Text="{Binding Item.Price}" FontSize="Small"/>
         <Label Text="Description:" FontSize="Medium" />
         <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        <Entry x:Name="txtAmount" Text="5"/>
+        <Button Text="Order" Clicked="onOrder" Grid.Column="7" Grid.Row="0" BackgroundColor="ForestGreen" TextColor="White"></Button>
+
     </StackLayout>
 </ContentPage>
